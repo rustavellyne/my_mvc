@@ -11,13 +11,14 @@ $uri = $_SERVER['REQUEST_URI'];
 $router = new Router($uri);
 
 
+
 try {
     App::run($uri);
 } catch (Exception $e) {
     echo $e;
 }
-
+/*
 $test = App::$db->query('select * from pages');
 echo "<pre>";
-print_r($test);
+print_r($test);*/
 

@@ -21,4 +21,8 @@ class PagesController extends Controller
             $this->data['page'] = $this->model->getByAlias($alias);
         }
     }
+
+    public function admin_index(){
+
+    }
 }
