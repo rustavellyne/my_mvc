@@ -17,7 +17,7 @@ require_once(ROOT.DS. 'config' .DS. 'config.php');
 function autoload($class_name) {
 
     $lib_path = ROOT.DS . 'lib' . DS . ucfirst(strtolower($class_name)) . '.php';
-    $controllers = ROOT.DS . 'controllers' . DS . str_replace('controller', '', ucfirst(strtolower($class_name)))  . 'controller.php';
+    $controllers = ROOT.DS . 'controllers' . DS . str_replace('controller', '', strtolower($class_name))  . '.controller.php';
     $model_path = ROOT.DS . 'models' . DS . ucfirst(strtolower($class_name)) . 'php';
 
     if ( file_exists($lib_path) ) {
@@ -32,6 +32,9 @@ function autoload($class_name) {
 
 }
 
+function __($key, $default_value = ''){
+    return Lang::get($key, $default_value);
+}
 
 
 
